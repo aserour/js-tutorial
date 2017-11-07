@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#button1').click(function() {
+
+        // send ajax request to server
+
+        $.ajax({
+            url: "http://localhost:3000/",
+            beforeSend: function(xhr) {
+              xhr.overrideMimeType("text/plain; charset=x-user-defined");
+            }
+          })
+          .done(function(data) {
+            if (console && console.log) {
+              console.log("Sample of data:", data.slice(0, 100));
+            }
+          });
+
+
+      });
+    });
+
+    //$('.red').i
+  </script>
+
+</head>
+
+<body>
+
+  <button id='button1'> Send Ajax Request </button>
+
+  <div class="red">
+    Div 3333
+  </div>
+
+
+  <div class="red">
+    Div 2
+  </div>
+
+
+</body>
+
+</html>
